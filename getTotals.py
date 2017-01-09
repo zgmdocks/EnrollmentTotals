@@ -25,15 +25,19 @@ for course in courses:
     total = 0
     limit = 0
 
+    print course
     for lec in info:
         if 'LEC' in lec['section']:
-            total = total + lec['enrollment_total']
-            limit = limit + lec['enrollment_capacity']
-    print 'For ' + course + ':'
-    print 'Total Enrollment is: {}'.format(total)
-    print 'Total Capacity is: {}'.format(limit) 
-    print date 
-    print time
-    cur.execute("INSERT INTO enrollment VALUES (%s,%s,%s,%s,%s)",(course,total,limit,date,time))
-    db.commit()
+            total = lec['enrollment_total']
+            limit = lec['enrollment_capacity']
+            section = lec['section']
+            print section
+            lecturers = lec['classes'][0]['instructors']
+            if len(lecturers) > 0:
+                lecturer = lecturers[0]
+            print lecturer
+            print total
+            print limit
+            cur.execute("INSERT INTO enrollment VALUES (%s,%s,%s,%s,%s,%s,%s)",(course,section,lecturer,total,limit,date,time))
+            db.commit()
 
