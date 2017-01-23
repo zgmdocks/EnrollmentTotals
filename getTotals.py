@@ -5,7 +5,7 @@ import json
 import datetime
 from info import *
 
-courses = ['cs/240','cs/241','cs/251','co/481','econ/102','co/444','biol/355','clas/104','biol/450','kin/310','ahs/100','hlth/340','chem/267','cs/452','math/136','math/239','math/138','phys/122','cs/136','econ/101','math/128','math/127','chem/123']
+courses = ['cs/240','cs/241','cs/251','co/481','phys/467','cs/467','econ/102','co/444','biol/355','clas/104','biol/450','kin/310','ahs/100','hlth/340','chem/267','cs/452','math/136','math/239','math/138','phys/122','cs/136','econ/101','math/128','math/127','chem/123']
 
 db = MySQLdb.connect(host="localhost",user="root",passwd=password,db='Courses')
 cur = db.cursor()
