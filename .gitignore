@@ -1,3 +1,4 @@
 backupDB.sh
 info.py
 info.pyc
+__pycache__*
