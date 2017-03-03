@@ -13,21 +13,26 @@ query = db.store_result()
 
 results = query.fetch_row(maxrows=0)
 
-data = {}
+tempDict = {}
 
+# used to add up all sections
 for val in results:
     time = datetime.strptime(val[2].strftime("%m/%d/%y") + " " + val[1],"%m/%d/%y %H:%M:%S")
-    if not time in data:
-        data[time] = val[0]
+    if not time in tempDict:
+        tempDict[time] = val[0]
     else:
-        data[time] = data[time] + val[0]
+        tempDict[time] = tempDict[time] + val[0]
 
-x = []
-y = []
+data = []
 
-for val in data:
-    x.append(val)
-    y.append(data[val])
+# now changing dictionary into a list so I can sort by date
+for key in tempDict.keys():
+    data.append([key, tempDict[key]])
+
+data.sort()
+
+x = [x for (x,y) in data]
+y = [y for (x,y) in data]
 
 plt.plot_date(x,y,'-')
 plt.show()
