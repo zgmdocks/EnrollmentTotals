@@ -7,7 +7,7 @@ from datetime import datetime
 db = MySQLdb.connect(host="localhost",user="root",passwd=password,db='Courses')
 cur = db.cursor()
 
-db.query("SELECT enrollment_total,time,time_stamp FROM enrollment where course='clas/104'")
+db.query("SELECT enrollment_total,time,time_stamp FROM enrollment where course='cs/240'")
 
 query = db.store_result()
 
