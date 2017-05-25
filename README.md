@@ -6,4 +6,4 @@ All of the graphs have now been compiled for Winter 2017. They are viewable in t
 
 The following is an example of one of the graphs that have been created:
 
-[[https://github.com/zgmdocks/EnrollmentTotals/plots/cs240.png]]
+![Alt text](https://github.com/zgmdocks/EnrollmentTotals/blob/master/plots/cs240.png)
