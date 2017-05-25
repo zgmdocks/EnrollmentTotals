@@ -39,19 +39,10 @@ for course in courses:
     x = [x for (x,y) in data]
     y = [y for (x,y) in data]
 
-    if course == "econ/101":
-        print(x)
-        print(y)
-        print(len(x))
-        print(len(y))
     plt.plot_date(x,y,'-')
     filename = course.replace("/","")
     plt.suptitle(filename,fontsize = 14, fontweight='bold')
     plt.xlabel('Date')
     plt.ylabel('Students Enrolled')
-#    fig = plt.figure()
-#    fig.autofmt_xdate()
-    if course == "econ/101":
-        plt.show()
     plt.savefig("plots/{}.png".format(filename))
     plt.close()
