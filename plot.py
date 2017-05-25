@@ -49,8 +49,9 @@ for course in courses:
     plt.suptitle(filename,fontsize = 14, fontweight='bold')
     plt.xlabel('Date')
     plt.ylabel('Students Enrolled')
-    fig = plt.figure()
-    fig.autofmt_xdate()
+#    fig = plt.figure()
+#    fig.autofmt_xdate()
     if course == "econ/101":
         plt.show()
     plt.savefig("plots/{}.png".format(filename))
+    plt.close()
