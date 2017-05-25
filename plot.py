@@ -33,9 +33,22 @@ for course in courses:
         data.append([key, tempDict[key]])
 
     data.sort()
+#    if course == 'econ/101':
+  #      print(data)
 
     x = [x for (x,y) in data]
     y = [y for (x,y) in data]
 
+    if course == "econ/101":
+        print(x)
+        print(y)
+        print(len(x))
+        print(len(y))
     plt.plot_date(x,y,'-')
-    plt.savefig("{}.png".format(course).replace("/",""))
+    filename = course.replace("/","")
+    plt.suptitle(filename,fontsize = 14, fontweight='bold')
+    plt.xlabel('Date')
+    plt.ylabel('Students Enrolled')
+    if course == "econ/101":
+        plt.show()
+    plt.savefig("plots/{}.png".format(filename))
